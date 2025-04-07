@@ -1,0 +1,6 @@
+services:
+  store_your_jinja:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - "30031:5000"

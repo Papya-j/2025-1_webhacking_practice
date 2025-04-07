@@ -1,0 +1,6 @@
+services:
+  simple_stored_xss:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - "30033:5000"
