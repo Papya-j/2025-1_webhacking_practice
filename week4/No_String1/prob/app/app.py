@@ -28,17 +28,17 @@ def db_init():
 
 @app.route("/", methods=["GET"])
 def index():
-    password = request.args.get("password")
+    username = request.args.get("username")
     
-    if not password:
-        password = 1234
+    if not username:
+        username = 1234
     
-    if re.match(r"(\"|\'|\(|\)|or|and|select|union|insert|update|delete)", password, re.I):
+    if re.search(r"(\"|\'|\(|\)|or|and|select|union|insert|update|delete)", username, re.I):
         return "No Hack ~_~"
     
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
-    cursor.execute(f"SELECT username, password FROM users WHERE password={password};")
+    cursor.execute(f"SELECT username, password FROM users WHERE username={username};")
     try:
         username, password = cursor.fetchone()
     except:

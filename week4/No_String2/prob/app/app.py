@@ -33,7 +33,7 @@ def index():
     if not username:
         username = "1234"
     
-    if re.match(r"(\"|\'|>|<|=|or|and|select)", username, re.I):
+    if re.search(r"(\"|\'|>|<|=|or|and|select|username)", username, re.I):
         return "No Hack ~_~"
     
     conn = sqlite3.connect(DB_PATH)

@@ -24,7 +24,7 @@ def store():
     if not name or not re.match(r"^[0-9a-zA-Z]+$", name):
         return "Invalid Page Name"
     
-    ### validsation ###
+    ### validation ###
     if re.search(r"(script|on|object|frame|embed|img|src|data|base)", content, flags=re.I):
         return "No Hack ~_~"
     
