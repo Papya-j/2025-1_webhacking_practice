@@ -1,0 +1,6 @@
+services:
+  simple_sqli:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - "30030:5000"

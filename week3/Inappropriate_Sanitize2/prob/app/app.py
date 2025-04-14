@@ -22,6 +22,7 @@ def index():
     while True:
         # Sanitize
         html = re.sub(r"(script|on|object|frame|embed|img|svg|src|data|base)", "", html, flags=re.I)
+        
         # I don't like double quotes
         html = re.sub(r"\"", "&quot;", html)
         

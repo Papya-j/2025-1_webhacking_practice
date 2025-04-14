@@ -1,0 +1,6 @@
+services:
+  no_string2:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - "30032:5000"
