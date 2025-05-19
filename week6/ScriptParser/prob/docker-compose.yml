@@ -1,0 +1,6 @@
+services:
+  script_parser:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - "30031:5000"

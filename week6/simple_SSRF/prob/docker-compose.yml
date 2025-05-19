@@ -1,0 +1,6 @@
+services:
+  simple_ssrf:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - "30030:5000"
