@@ -26,7 +26,7 @@ def is_accept(content: str):
         if not "></" in content:
             return False
         
-        if not re.match(r'<script src="http://127.0.0.1:30031([0-9a-zA-Z/.])*">', content):
+        if not re.match(r'<script src="http://127.0.0.1:(30031|5000)([0-9a-zA-Z/.])*">', content):
             return False
         
         return True
