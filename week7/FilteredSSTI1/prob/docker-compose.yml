@@ -1,0 +1,6 @@
+services:
+  filteredssti1:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - "30030:5000"
